@@ -77,6 +77,10 @@ getTotalCombinations(); // => 106530
 | `star` | `string` | random | Force a specific star name |
 | `separator` | `string` | `"-"` | Separator between words |
 
+## Author
+
+**Vitalii Petrenko** — [vitalii4reva.com](https://vitalii4reva.com)
+
 ## License
 
 MIT
