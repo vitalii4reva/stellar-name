@@ -37,6 +37,14 @@
     "name": "Vitalii Petrenko",
     "url": "https://vitalii4reva.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitalii4reva/stellar-name.git"
+  },
+  "homepage": "https://github.com/vitalii4reva/stellar-name#readme",
+  "bugs": {
+    "url": "https://github.com/vitalii4reva/stellar-name/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "tsup": "^8.0.0",
