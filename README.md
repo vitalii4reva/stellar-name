@@ -13,19 +13,26 @@ npm install stellar-name
 ## Usage
 
 ```ts
-import { generateSlug, generateUniqueSlug, getRandomStar, getRandomAdjective } from 'stellar-name';
+import { generate, generateName, generateSlug } from 'stellar-name';
 
+// Get everything at once
+generate();
+// => { name: "Blazing Sirius", slug: "blazing-sirius", adjective: "blazing", star: "Sirius" }
+
+// Just the name
+generateName();
+// => "Ancient Vega"
+
+// Just the slug
 generateSlug();
-// => "blazing-sirius"
+// => "cosmic-antares"
 
-generateSlug({ adjective: 'ancient' });
-// => "ancient-vega"
-
-generateSlug({ star: 'Polaris' });
-// => "radiant-polaris"
+// With options
+generate({ adjective: 'ancient', star: 'Polaris' });
+// => { name: "Ancient Polaris", slug: "ancient-polaris", adjective: "ancient", star: "Polaris" }
 
 generateSlug({ separator: '_' });
-// => "cosmic_antares"
+// => "radiant_polaris"
 ```
 
 ### Unique slugs
@@ -51,7 +58,7 @@ import {
   getRandomAdjective,
   getTotalCombinations,
   getAllSlugs,
-} from 'stars-names';
+} from 'stellar-name';
 
 getRandomStar();        // => "Betelgeuse"
 getRandomAdjective();   // => "luminous"
@@ -60,16 +67,18 @@ getTotalCombinations(); // => 106530
 
 ## API
 
-| Function | Description |
-|---|---|
-| `generateSlug(options?)` | Generate a random slug |
-| `generateUniqueSlug(existing, options?)` | Generate a slug not in the `existing` Set |
-| `getAllSlugs(separator?)` | Return all possible slug combinations |
-| `getRandomStar()` | Random star name |
-| `getRandomAdjective()` | Random adjective |
-| `getTotalCombinations()` | Total number of possible combinations |
+| Function | Returns | Description |
+|---|---|---|
+| `generate(options?)` | `StellarResult` | Name, slug, adjective, and star in one call |
+| `generateName(options?)` | `string` | Display name like `"Blazing Sirius"` |
+| `generateSlug(options?)` | `string` | Slug like `"blazing-sirius"` |
+| `generateUniqueSlug(existing, options?)` | `string` | Slug not in the `existing` Set |
+| `getAllSlugs(separator?)` | `string[]` | All possible slug combinations |
+| `getRandomStar()` | `string` | Random star name |
+| `getRandomAdjective()` | `string` | Random adjective |
+| `getTotalCombinations()` | `number` | Total possible combinations |
 
-### `SlugOptions`
+### `GenerateOptions`
 
 | Option | Type | Default | Description |
 |---|---|---|---|

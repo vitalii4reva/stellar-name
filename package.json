@@ -1,6 +1,6 @@
 {
   "name": "stellar-name",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generate unique slugs from star adjectives and named star combinations",
   "type": "module",
   "main": "./dist/index.cjs",
